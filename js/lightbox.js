@@ -23,7 +23,7 @@ version: 1.0
   $.fn.lightbox = function () {
     this.each(function () {
 
-      // LightboxOverlay() - triggered by starting lightboxOpen()
+      // lightboxOverlay() - triggered by starting lightboxOpen()
 
       function lightboxOverlay() {
         // Disable right-click
@@ -42,7 +42,7 @@ version: 1.0
         });
       }
 
-      // lightboxLoading() - triggered by starting lightboxOpen; see below
+      // lightboxLoading() - triggered by starting lightboxOpen()
 
       function lightboxLoading() {
         $('<div class="lightbox-loading"><i class="fa fa-spinner fa-3x fa-spin"></i></div>').hide().appendTo('body');
@@ -88,19 +88,19 @@ version: 1.0
           });
           var imageWidth = $('.lightbox img').width(),
             imageHeight = $('.lightbox img').height();
-          $('.lightbox-title').css({
-            width: imageWidth - 170
-          });
-          // Animate opening lightbox
+          //          $('.lightbox-title').css({
+          //            width: imageWidth - 170
+          //          });
+          // Animate opening the lightbox
           $('.lightbox').css({
             top: $(window).height() / 2,
             left: '50%'
           }).animate({
             opacity: 1,
             marginLeft: -((imageWidth + 20) / 2),
-            marginTop: -((imageHeight + 60) / 2),
+            marginTop: -((imageHeight + 90) / 2),
             width: (imageWidth + 20),
-            height: (imageHeight + 60)
+            height: (imageHeight + 90)
           }, 500, function () {
             // Add lightbox Content to lightbox after opening
             $('.lightbox-title, .lightbox-nav, .lightbox img').fadeTo(500, 1);
@@ -122,7 +122,7 @@ version: 1.0
               $('.lightbox-overlay').remove();
             });
           });
-          // If window is resized (or phone/tablet rotated), it also clicks #close (X) 
+          // If window is resized (or phone/tablet rotated), this also clicks #close (X) 
           $(window).resize(function () {
             $('#close').click();
           });
@@ -140,11 +140,11 @@ version: 1.0
           title = $(this).prop('title');
 
         if (title === 'undefined' || title === 'false') {
-          $('<div class="lightbox"><div class="lightbox-title" style="height: 26px"></div><div class="lightbox-nav"><a id="close"><i class="fa fa-times"></i></a></div>' + '<img src=' + href + ' /></div>').appendTo('body');
+          $('<div class="lightbox"><div class="lightbox-nav"><a id="close"><i class="fa fa-times"></i></a></div>' + '<img src=' + href + ' /><div class="lightbox-title" style="height:20px"></div></div>').appendTo('body');
         } else {
-          $('<div class="lightbox"><div class="lightbox-title"><span>' + title + '</span></div><div class="lightbox-nav"><a id="close"><i class="fa fa-times"></i></a></div>' + '<img src=' + href + ' /></div>').appendTo('body');
+          $('<div class="lightbox"><div class="lightbox-nav"><a id="close"><i class="fa fa-times"></i></a></div>' + '<img src=' + href + ' /><div class="lightbox-title"><span>' + title + '</span></div></div>').appendTo('body');
         }
-        // Append buttons and image counter if this data-lightbox="lightbox-group" is greater than one
+        // Append buttons and image counter if this data-lightbox="lightbox-group" is > 1
         if ((dataLightbox.match('group') || dataLightbox.match('Group')) && dataLightboxCount > 1) {
           $('<a id="prev"><i class="fa fa-arrow-left"></i></a><span id="count">' + parseInt(index + 1, 10) + ' / ' + dataLightboxCount + '</span><a id="next"><i class="fa fa-arrow-right"></i></a>').appendTo('.lightbox-nav');
         }
@@ -183,7 +183,7 @@ version: 1.0
         });
         // Start lightbox
         lightboxOpen();
-        return false; // Prevents the image-link being opened in the window
+        return false; // Prevents the image-link being opened in the browser
       });
     });
     return this;

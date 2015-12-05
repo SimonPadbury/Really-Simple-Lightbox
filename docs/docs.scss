@@ -10,12 +10,13 @@ html {
 
 body {
   font-size: 18px;
-  line-height: 1.5;
+  line-height: 1.7;
   color: #444;
+  background: #f6f6f6;
 }
 
 .wrap {
-  max-width: 1000px;
+  width: 1000px;
   margin: auto;
   padding: 15px;
 }
@@ -45,45 +46,40 @@ a {
 }
 
 pre {
-  margin: 40px 0;
+  margin: 20px 0;
   padding: 20px;
-  background: #444;
-  color: #fc0;
-  box-shadow: inset 0 0 5px #000;
   overflow-x: auto;
+  background: #eee;
+  color: #000;
   border-radius: 4px;
+  box-shadow: inset 0 0 5px #ccc;
 }
 
 code {
   display: inline-block;
-  background: #444;
-  padding: 0 7px;
-  color: #fc0;
+  background: #eee;
+  padding: 0 5px;
+  color: #000;
   border-radius: 4px;
+  box-shadow: inset 0 0 5px #ccc;
 }
 
 .box {
-  margin-bottom: 30px;
-  border: 1px solid #ddd;
-  padding: 10px 20px;
+  //  border-bottom: 1px solid #ddd;
   overflow: hidden;
+  margin: 0 auto 20px;
+  padding: 18px;
+  background: #fff;
+  box-shadow: 0 1px 2px #ddd;
 }
 
-.thumbnail,
-.gallery {
+.thumbnail {
   float: left;
-  margin: 0 30px 30px 0;
+  width: 156px;
   height: auto;
+  margin: 0 30px 30px 0;
   img {
     max-width: 100%;
     height: auto;
   }
-}
-
-.thumbnail {
-  width: 150px;
-}
-
-.gallery {
-  width: 21.75%;
 }

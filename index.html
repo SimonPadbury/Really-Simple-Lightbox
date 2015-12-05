@@ -22,131 +22,117 @@
 
   <main class="wrap">
 
+    <p>A jQuery plugin for static websites. 4KB <code>lightbox.min.js</code> + 1KB <code>lightbox.min.css</code></p>
+
     <p>Example:</p>
 
-    <div class="thumbnail">
-      <a href="docs/img/800x800.svg" data-lightbox="lightbox" title="Example"><img class="lightbox-thumbnail" src="docs/img/800x800.svg"></a>
+    <div class="box">
+      <div class="thumbnail">
+        <a href="docs/img/800x800.svg" data-lightbox="lightbox-group-1" title="Example One"><img class="lightbox-thumbnail" src="docs/img/800x800.svg"></a>
+      </div>
+      <div class="thumbnail">
+        <a href="docs/img/300x300.svg" data-lightbox="lightbox-group-1" title="Example Two"><img class="lightbox-thumbnail" src="docs/img/300x300.svg"></a>
+      </div>
+      <div class="thumbnail">
+        <a href="docs/img/300x500.svg" data-lightbox="lightbox-group-1" title="Example Three"><img class="lightbox-thumbnail" src="docs/img/300x500.svg"></a>
+      </div>
+      <div class="thumbnail">
+        <a href="docs/img/500x700.svg" data-lightbox="lightbox-group-1" title="Example Four"><img class="lightbox-thumbnail" src="docs/img/500x700.svg"></a>
+      </div>
+      <div class="thumbnail">
+        <a href="docs/img/800x600.svg" data-lightbox="lightbox-group-1" title="Example Five"><img class="lightbox-thumbnail" src="docs/img/800x600.svg"></a>
+      </div>
     </div>
 
-    <div style="clear: left;">
-      <h4>Docs</h4>
-      <ul>
-        <li><a href="#intro">Introduction</a></li>
-        <li><a href="#setup">Lightbox Setup</a></li>
-        <li><a href="#works">How the Lightbox Works</a></li>
-        <li><a href="#titles">Lightbox Titles</a></li>
-        <li><a href="#groups">Lightbox Image Groups (Galleries)</a></li>
-      </ul>
-    </div>
+    <h2>Lightbox Setup</h2>
 
-    <h2 id="intro">Introduction</h2>
+    <h3><big>(1.)</big> Include jQuery and the Lightbox Script and Stylesheet</h3>
 
-    <p>This is a really simple lightbox jquery plugin for static websites.</p>
-
-    <p>The minified jquery plugin (<code>js/lightbox.min.js</code>) is 3KB and the accompanying minified stylesheet (<code>css/lightbox.min.css</code>) is 1KB.</p>
-
-    <p>Also required is an icon font for the lightbox:</p>
-
-    <ol>
-      <li>dismiss icon, <i class="fa fa-times"></i></li>
-      <li>group previous icon, <i class="fa fa-arrow-left"></i></li>
-      <li>group next icon, <i class="fa fa-arrow-right"></i></li>
-      <li>CSS3-animated loading icon, <i class="fa fa-spinner fa-3x fa-spin"></i></li>
-    </ol>
-
-    <p>For these I have included <a href="http://fontawesome.github.io/Font-Awesome/">Font Awesome</a>. (Swap these out of you're using a different icon font.)</p>
-
-    <h2 id="setup">Lightbox Setup</h2>
-
-    <h4><b>Step 1:</b> Include the lightbox stylesheet and JavaScript, and jQuery</h4>
-
-    <p>The simplest way to include associate the required jquery files and stylesheet with your project is to copy these three lines into your webpage's <code>&lt;head&gt;</code>:</p>
-
-    <div class="callout secondary">
-      <pre>&lt;-- Stylesheet --&gt;
-&lt;link rel="stylesheet" href="css/lightbox.min.css"&gt;
-
-&lt;-- Scripts --&gt;
+    <pre>&lt;-- Scripts --&gt;
 &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"&gt;&lt;/script&gt;
-&lt;script src="js/lightbox.min.js"&gt;&lt;/script&gt;</pre>
-    </div>
+&lt;script src="js/lightbox.min.js"&gt;&lt;/script&gt;
+
+&lt;-- Stylesheet --&gt;
+&lt;link rel="stylesheet" href="css/lightbox.min.css"&gt;</pre>
 
     <p>Then, copy <code>lightbox.min.js</code> and <code>lightbox.min.css</code> into your project.
     </p>
 
     <p>&nbsp;</p>
 
-    <h4><b>Step 2:</b> Create an instance of the lightbox on your webpage</h4>
-
-    <p>Here is all you need to do to create an instance of a lightbox on your webpage.</p>
-
+    <h3><big>(2.)</big> Create an Instance of the Lightbox on Your Webpage</h3>
 
     <div class="box">
       <p><b>For a link:</b></p>
 
-      <pre>&lt;a href="images/filename.jpg" data-lightbox="lightbox"&gt;Link&lt;/a&gt;</pre>
+      <pre>&lt;a href="image.png" data-lightbox="lightbox"&gt;
+ Click me
+&lt;/a&gt;</pre>
 
       <div class="thumbnail">
         <a href="docs/img/800x800.svg" data-lightbox="lightbox">Click me</a>
       </div>
-      <p>&mdash; A placeholder image should appear in a lightbox.</p>
     </div>
 
     <div class="box">
       <p><b>For a thumbnail:</b></p>
 
-      <pre>&lt;a href="images/filename.jpg" data-lightbox="lightbox"&gt;
-  &lt;img class="lightbox-thumbnail" src="images/filename.jpg"&gt;
+      <pre>&lt;a href="image.png" data-lightbox="lightbox"&gt;
+  &lt;img class="lightbox-thumbnail" src="image-thumbnail.png"&gt;
 &lt;/a&gt;</pre>
 
-      <p>You may use a smaller (thumbnail) image within the link. (But here I have used the same image, and relied upon <code>img { max-width: 100%, height: auto; }</code> to control the size of the 'thumbnail'.)</p>
+      <p>You may use a smaller (thumbnail) image within the link. (But here I have used the same image, relying upon <code>img {max-width: 100%, height: auto;}</code> to control the size of the 'thumbnail'.)</p>
 
       <div class="thumbnail">
         <a href="docs/img/800x800.svg" data-lightbox="lightbox"><img class="lightbox-thumbnail" src="docs/img/800x800.svg"></a>
       </div>
-      <p>&mdash; You should be able to see a placeholder image to the left. Click the 'thumbnail' image and the same image (enlarged) should appear in the lightbox.</p>
-    </div>
     </div>
 
-    <p><i>That's all you need &ndash; for single images.</i> But please read on, to see how you can add a <a href="#titles">lightbox title</a>, and how you can set up <a href="#groups">image groups</a>, such as you may need in image galleries.</p>
+    <p>The lightbox script copies the linked image from <code>&lt;a href="your-image.png" data-lightbox="lightbox"&gt;</code>, wraps it in a <code>&lt;div class="lightbox"&gt;</code> and <code>&lt;img&gt;</code> tag, and presents it as a popover lightbox.</p>
 
-    <h2 id="works">How Really Simple Lightbox works</h2>
+    <p>While loading the image a large CSS3 animated spinner icon <i class="fa fa-spinner fa-spin"></i> temporarily appears.</p>
 
-    <p>The lightbox script takes the <code>href=""</code> linked image, wraps it in a <code>&lt;div&gt;</code> and <code>&lt;img&gt;</code> tag, and presents it as a popover lightbox. The script also adds the title, dismiss <i class="fa fa-times"></i> symbol, and also previous/next navigation links if the lightbox is in a group, a.k.a. gallery. (More information will be given below in the relevant sections.)</p>
+    <p>A dismiss icon <i class="fa fa-times"></i> is added in the lightbox top right corner.</p>
 
-    <p>You can have taller-than-wide images (e.g. portraits) or wider-than-tall images (e.g. landscapes), or square images. The lightbox script will figure out how to display the image by detecting the image's actual width and height, and by detecting the visitor's window width and height, and then making the necessary adjustments so that the image appears neatly on the screen.</p>
+    <p>If there is a title, the script also adds it in the lightbox bottom left corner (copying the title from <code>&lt;a href="image.png" title"Image Title" data-lightbox="lightbox"&gt;</code>).</p>
 
-    <p>To dismiss a lightbox, click the <i class="fa fa-times"></i> symbol that will appear in the top-right corner. Or else click anywhere on the darkened page. And if the image fails to appear, click the darkened background or click the "lightbox loading" spinner.</p>
+    <p>And if the lightbox is in a group <code>data-lightbox="lightbox-group-[identifier]"</code>, then previous <i class="fa fa-arrow-left"></i> and next <i class="fa fa-arrow-right"></i> navigation icons and a counter in the lightbox top right corner beside the dismiss icon <i class="fa fa-times"></i>.</p>
 
-    <p>In the CSS I have styled <i>any lightbox thumbmail image</i> (i.e. any image wrapped in an <code>&lt;a&gt;</code> containing a <code>rel="____"</code>) to have a white padding (frame) and a thin grey box-shadow. And when a visitor hovers over the thumbnail image, they will see that the shadow turns blue and gently increases in 'depth' (this effect fades out too when you exit the image). This blue color indicates to the visitor that he/she can click on the thumbnail image.</p>
+    <p>For the icons I have included <a href="http://fontawesome.github.io/Font-Awesome/">Font Awesome</a>. (Swap these out of you are using a different icon font.)</p>
 
-    <h2 id="titles">Lightbox titles</h2>
+    <p>You can have images of any dimension or orientation (portrait or landscape). The lightbox script will figure out how to display the image by detecting its actual width and height, and by detecting the visitor's window width and height, and then making the necessary adjustments so that the image appears neatly on the screen.</p>
 
-    <p>If you require a title to appear above the lightbox image, simply add <code>title="Your image title"</code> into the <code>&lt;a&gt;</code> tag, as follows:</p>
+    <p>To dismiss a lightbox, click the dismiss icon <i class="fa fa-times"></i> that will appear in the top-right corner of the lightbox. Or else click anywhere on the semi-transparent dark overlay (i.e. click outside the lightbox). And if the image fails to appear, the loading can be cancelled by clicking the same overlay or clicking the "lightbox loading" spinner <i class="fa fa-spinner fa-spin"></i>.</p>
 
-    <pre>&lt;a href="images/filename.jpg" data-lightbox="lightbox" title="Something"&gt;
-    &lt;img class="lightbox-thumbnail" src="images/filename-thumb.jpg"&gt;
+    <p><code>&lt;img class="lightbox-thumbnail"&gt;</code> has been styled with a white padding "photo frame" and a thin grey box-shadow. The box-shadow turns blue and expands on hover, to notify the visitor that the thumbnail image is clickable.</p>
+
+    <p>&nbsp;</p>
+
+    <h3><big>(3.)</big> Lightbox Titles</h3>
+
+    <pre>&lt;a href="image.png" title="Image Title" data-lightbox="lightbox"&gt;
+    &lt;img class="lightbox-thumbnail" src="image-thumbnail.png"&gt;
 &lt;/a&gt;</pre>
 
-    <p>The title should be short, because it needs to fit on a small-screen (phones) lightbox.</i>
+    <p>The title should be short, so that it can fit on a small-screen (phones) lightbox.</i>
     </p>
 
     <p>Examples:</p>
 
     <div class="box">
-      <div class="gallery">
+      <div class="thumbnail">
         <a href="docs/img/800x600.svg" data-lightbox="lightbox" title="Left image"><img class="lightbox-thumbnail" src="docs/img/800x600.svg"></a>
       </div>
-      <div class="gallery">
+      <div class="thumbnail">
         <a href="docs/img/700x300.svg" data-lightbox="lightbox" title="Right image"><img class="lightbox-thumbnail" src="docs/img/700x300.svg"></a>
       </div>
     </div>
 
-    <h2 id="groups">Image Groups</h2>
+    <p>&nbsp;</p>
 
-    <p>But if you have a group of images that need to be viewed in a combined lightbox, then all you need to do is add <code>data-lightbox="lightbox-group-XX</code> to the <code>&lt;a&gt;</code> of each image in the group.</p>
+    <h3><big>(4.)</big> Lightbox Image Groups</h3>
 
-    <p>For example:</p>
+    <p>If you have a group of images that need to be viewed in a combined lightbox (with previous <i class="fa fa-arrow-left"></i> and next <i class="fa fa-arrow-right"></i> navigation icons and a counter) then all you need to do is add <code>data-lightbox="lightbox-group-[identifier]"</code> instead of <code>data-lightbox="lightbox"</code></p>
 
     <pre>
 &lt;a href="images/filenameA.jpg" data-lightbox="lightbox-group-1" title="Whatever"&gt;
@@ -161,20 +147,25 @@
     &lt;img class="lightbox-thumbnail" src="images/filenameC-thumb.jpg"&gt;
 &lt;/a&gt;</pre>
 
-    <p>Click on these images below, and you will see that they are linked together in their lightboxes, with a back-arrow and forward-arrow. The group will 'cycle' if you continue clicking one arrow, starting at the beginning again (or starting at the end again, if the visitor is cycling backwards). There is no 'timed automatic' cycle, so your visitors can spend as long as they like looking at your images.</p>
+    <p><code>[identifier]</code> can be any number, letter or word.</p>
+
+    <p>The image group will 'cycle' if you continue clicking an arrow, whether forwards or backwards). There is no 'timed automatic' cycle, so your visitors can spend as long as they like looking at your images.</p>
 
     <div class="box">
-      <div class="gallery">
-        <a href="docs/img/300x300.svg" data-lightbox="lightbox-group-1" title="Gallery image 1"><img class="lightbox-thumbnail" src="docs/img/300x300.svg"></a>
+      <div class="thumbnail">
+        <a href="docs/img/800x800.svg" data-lightbox="lightbox-group-2"><img class="lightbox-thumbnail" src="docs/img/800x800.svg"></a>
       </div>
-      <div class="gallery">
-        <a href="docs/img/300x500.svg" data-lightbox="lightbox-group-1" title="Gallery image 2"><img class="lightbox-thumbnail" src="docs/img/300x500.svg"></a>
+      <div class="thumbnail">
+        <a href="docs/img/300x300.svg" data-lightbox="lightbox-group-2"><img class="lightbox-thumbnail" src="docs/img/300x300.svg"></a>
       </div>
-      <div class="gallery">
-        <a href="docs/img/500x700.svg" data-lightbox="lightbox-group-1" title="Gallery image 3"><img class="lightbox-thumbnail" src="docs/img/500x700.svg"></a>
+      <div class="thumbnail">
+        <a href="docs/img/300x500.svg" data-lightbox="lightbox-group-2"><img class="lightbox-thumbnail" src="docs/img/300x500.svg"></a>
       </div>
-      <div class="gallery">
-        <a href="docs/img/800x600.svg" data-lightbox="lightbox-group-1" title="Gallery image 4"><img class="lightbox-thumbnail" src="docs/img/800x600.svg"></a>
+      <div class="thumbnail">
+        <a href="docs/img/500x700.svg" data-lightbox="lightbox-group-2"><img class="lightbox-thumbnail" src="docs/img/500x700.svg"></a>
+      </div>
+      <div class="thumbnail">
+        <a href="docs/img/800x600.svg" data-lightbox="lightbox-group-2"><img class="lightbox-thumbnail" src="docs/img/800x600.svg"></a>
       </div>
     </div>
 

@@ -1,6 +1,6 @@
 .lightbox-thumbnail {
   border: 5px solid #fff;
-  box-shadow: 0 0 2px #777;
+  box-shadow: 0 1px 2px #bbb;
   transition: all 0.3s; }
   .lightbox-thumbnail:hover {
     box-shadow: 0 0 6px #29e; }
@@ -41,33 +41,33 @@
   font-family: Helvetica Heue, Arial, sans-serif;
   background-color: #fff;
   box-shadow: 0 0 5px black; }
-  .lightbox-title {
-    margin: 0 10px 10px 10px;
-    float: left;
-    text-align: left;
-    opacity: 0;
-    padding: 3px 0;
-    font-size: 16px;
-    line-height: 20px;
-    display: block;
-    background-color: #ffffff;
-    color: #000000; }
-    .lightbox-title span {
-      margin: 0; }
+
+.lightbox-title {
+  padding: 5px 10px 10px 15px;
+  text-align: left;
+  opacity: 0;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 20px;
+  display: block;
+  background-color: #ffffff;
+  color: #000000; }
+  .lightbox-title span {
+    margin: 0; }
 
 .lightbox-nav {
-  width: 140px;
-  margin: 0 10px;
+  width: 160px;
+  padding: 0 5px 5px 10px;
   float: right;
   opacity: 0;
   background-color: #fff; }
   .lightbox-nav a#close {
     float: right;
-    margin: -2px 0;
     padding: 5px 10px;
-    font-size: 12px;
+    font-size: 16px;
+    line-height: 20px;
     text-decoration: none;
-    color: #000000;
+    color: #000;
     background-color: #fff;
     cursor: pointer; }
   .lightbox-nav span {
@@ -78,9 +78,9 @@
   .lightbox-nav a#prev {
     margin: -8px 2px 0;
     padding: 5px 10px;
-    font-size: 12px;
+    font-size: 16px;
     text-decoration: none;
-    color: #000000;
+    color: #000;
     background-color: #fff;
     cursor: pointer; }
   .lightbox-nav a#close:hover,
